@@ -56,46 +56,55 @@
 		private var originalPosX: Number;
 		private var originalPosY: Number;
 
+		var plantRow: int;
+		var plantCol: int;
+
+
 		private function onBoatClicked(e: MouseEvent): void {
 			if (e.currentTarget is Boat) {
 				var clickedBoat: Boat = e.currentTarget as Boat;
 				if (e.type == MouseEvent.MOUSE_DOWN) {
 					originalPosX = e.currentTarget.x;
 					originalPosY = e.currentTarget.y;
+
 					if (clickedBoat.isPlace) {
-						for (var j: uint = 0; i < clickedBoat.boatSize; i++) {
-							var orgRow: int = Math.floor((originalPosY - 134.7) / 107.75);
-							var orgCol: int = Math.floor((originalPosX - 406.5) / 93.4);
-							gameField[orgRow][orgCol + i] = 0;
+						// Use the stored values from the previous MOUSE_UP event
+						for (var i: uint = 0; i < clickedBoat.boatSize; i++) {
+							trace(plantRow + " " + plantCol);
+							gameField[plantRow][plantCol + i] = 0;
 						}
 					}
 					e.currentTarget.startDrag();
-
 				} else if (e.type == MouseEvent.MOUSE_UP) {
-					var plantRow: int = Math.floor((e.currentTarget.y - 134.7) / 107.75);
-					var plantCol: int = Math.floor((e.currentTarget.x - 406.5) / 93.4);
+					plantRow = Math.floor((e.currentTarget.y - 134.7) / 107.75);
+					plantCol = Math.floor((e.currentTarget.x - 406.5) / 93.4);
 
 					if ((plantRow >= 0 && plantRow < 5) && (plantCol >= 0 && plantCol < 5)) {
 						e.currentTarget.x = (93.4 * plantCol) + 406.5;
 						e.currentTarget.y = (107.75 * plantRow) + 134.7;
-						trace(plantRow + " " + plantCol + ": " + clickedBoat.boatNumber);
+						trace(plantRow + " " + plantCol);
 
-						//Loop for the object size
-						for (var i: uint = 0; i < clickedBoat.boatSize; i++) {
-							gameField[plantRow][plantCol + i] = clickedBoat.boatNumber;
+						// Loop for the object size
+						for (var j: uint = 0; j < clickedBoat.boatSize; j++) {
+							gameField[plantRow][plantCol + j] = clickedBoat.boatNumber;
 						}
 
 						clickedBoat.isPlace = true;
 					} else {
-						e.currentTarget.x = originalPosX;
-						e.currentTarget.y = originalPosY;
+						if (!clickedBoat.isPlace) {
+							e.currentTarget.x = originalPosX;
+							e.currentTarget.y = originalPosY;
+						}
+
 					}
-					traceGameFieldValues()
+					traceGameFieldValues();
 					e.currentTarget.stopDrag();
 				}
-
 			}
 		}
+
+
+
 
 		private function traceGameFieldValues(): void {
 			trace(gameField);
