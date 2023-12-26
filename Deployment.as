@@ -70,7 +70,6 @@
 					if (clickedBoat.isPlace) {
 						// Use the stored values from the previous MOUSE_UP event
 						for (var i: uint = 0; i < clickedBoat.boatSize; i++) {
-							trace(plantRow + " " + plantCol);
 							gameField[plantRow][plantCol + i] = 0;
 						}
 					}
@@ -82,7 +81,6 @@
 					if ((plantRow >= 0 && plantRow < 5) && (plantCol >= 0 && plantCol < 5)) {
 						e.currentTarget.x = (93.4 * plantCol) + 406.5;
 						e.currentTarget.y = (107.75 * plantRow) + 134.7;
-						trace(plantRow + " " + plantCol);
 
 						// Loop for the object size
 						for (var j: uint = 0; j < clickedBoat.boatSize; j++) {
@@ -107,8 +105,20 @@
 
 
 		private function traceGameFieldValues(): void {
-			trace(gameField);
+			for (var i: uint = 0; i < 5; i++) {
+				var rowOutput: String = "";
+				for (var j: uint = 0; j < 5; j++) {
+					rowOutput += gameField[i][j];
+					if (j < 4) {
+						rowOutput += ", ";
+					}
+				}
+				trace(rowOutput);
+
+			}
+			trace("");
 		}
+
 
 
 
