@@ -39,6 +39,12 @@
 				if (deployment && deployment.parent) {
 					deployment.parent.removeChild(deployment);
 					addChild(myBattle); // Add the Game instance to the stage
+					myBattle.addChild(myDeployment.field);
+					myBattle.addChild(myDeployment.boat1);
+					myBattle.addChild(myDeployment.boat2);
+					myBattle.addChild(myDeployment.boat3);
+					myBattle.addChild(myDeployment.boat4);
+					myBattle.addChild(myDeployment.boat5);
 					myDeployment.deploymentReady.removeEventListener(MouseEvent.CLICK, onPlayClick); // Remove the event listener
 				}
 			}
