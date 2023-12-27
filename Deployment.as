@@ -81,6 +81,7 @@
 					if ((plantRow >= 0 && plantRow < 5) && (plantCol >= 0 && plantCol < 5)) {
 						e.currentTarget.x = (93.4 * plantCol) + 406.5;
 						e.currentTarget.y = (107.75 * plantRow) + 134.7;
+						
 
 						// Loop for the object size
 						for (var j: uint = 0; j < clickedBoat.boatSize; j++) {
