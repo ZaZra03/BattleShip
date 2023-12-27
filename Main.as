@@ -5,17 +5,20 @@
 	import flash.events.Event;
 
 	public class Main extends Sprite {
-		var inGame:Boolean = false;
+		var inGame: Boolean = false;
 		private var myMenu: Menu;
 		private var myDeployment: Deployment;
+		private var myBattle: Battle;
 
 		public function Main(): void {
 			myMenu = new Menu();
 			myDeployment = new Deployment();
+			myBattle = new Battle();
 
 			addChild(myMenu);
 
 			// Add event listener to the Menu class
+			myDeployment.deploymentReady.addEventListener(MouseEvent.CLICK, onPlayClick);
 			myMenu.menuPlay.addEventListener(MouseEvent.CLICK, onPlayClick);
 
 			addEventListener(Event.ENTER_FRAME, gameLoop);
@@ -30,6 +33,13 @@
 					menu.parent.removeChild(menu);
 					addChild(myDeployment); // Add the Game instance to the stage
 					myMenu.menuPlay.removeEventListener(MouseEvent.CLICK, onPlayClick); // Remove the event listener
+				}
+			} else if (event.currentTarget.parent && event.currentTarget.parent is Deployment) {
+				var deployment: Deployment = event.currentTarget.parent as Deployment;
+				if (deployment && deployment.parent) {
+					deployment.parent.removeChild(deployment);
+					addChild(myBattle); // Add the Game instance to the stage
+					myDeployment.deploymentReady.removeEventListener(MouseEvent.CLICK, onPlayClick); // Remove the event listener
 				}
 			}
 		}
