@@ -7,7 +7,6 @@
 		
 		
 		public function Battle() {
-			addChild(new Field());
 		}
 	}
 	

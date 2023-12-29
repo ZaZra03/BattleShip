@@ -4,7 +4,7 @@
 	import flash.events.MouseEvent;
 
 	public class Deployment extends Sprite {
-		private var gameField: Array;
+		public var gameField: Array;
 
 		public function Deployment() {
 			// constructor code
@@ -118,19 +118,7 @@
 			}
 			trace("");
 		}
-
-
-
-
-		//private function placePlant(e: MouseEvent): void {
-		//	var plantRow: int = Math.floor((mouseY - 134.7) / 107.75);
-		//	var plantCol: int = Math.floor((mouseX - 406.5) / 93.4);
-
-		//	trace("Plant Row: " + plantRow);
-		//	trace("Plant Column: " + plantCol);
-
-		// Rest of the code...
-		// ...
+	
 	}
 
 

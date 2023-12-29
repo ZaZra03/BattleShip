@@ -9,11 +9,15 @@
 		private var myMenu: Menu;
 		private var myDeployment: Deployment;
 		private var myBattle: Battle;
+		private var myField: Field;
+
+		private var gameField: Array;
 
 		public function Main(): void {
 			myMenu = new Menu();
 			myDeployment = new Deployment();
 			myBattle = new Battle();
+			myField = new Field();
 
 			addChild(myMenu);
 
@@ -39,12 +43,13 @@
 				if (deployment && deployment.parent) {
 					deployment.parent.removeChild(deployment);
 					addChild(myBattle); // Add the Game instance to the stage
-					myBattle.addChild(myDeployment.field);
-					myBattle.addChild(myDeployment.boat1);
-					myBattle.addChild(myDeployment.boat2);
-					myBattle.addChild(myDeployment.boat3);
-					myBattle.addChild(myDeployment.boat4);
-					myBattle.addChild(myDeployment.boat5);
+					//myBattle.addChild(myDeployment.field);
+					//myBattle.addChild(myDeployment.boat1);
+					//myBattle.addChild(myDeployment.boat2);
+					//myBattle.addChild(myDeployment.boat3);
+					//myBattle.addChild(myDeployment.boat4);
+					//myBattle.addChild(myDeployment.boat5);
+					//this.gameField = myDeployment.gameField;
 					myDeployment.deploymentReady.removeEventListener(MouseEvent.CLICK, onPlayClick); // Remove the event listener
 				}
 			}
