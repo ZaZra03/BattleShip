@@ -8,8 +8,6 @@
 
 		public function Field() {
 			// constructor code
-			tile1.addChild(new Boat1);
-			tile2.addChild(new Boat5);
 			setupField();
 		}
 

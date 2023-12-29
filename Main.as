@@ -6,18 +6,20 @@
 
 	public class Main extends Sprite {
 		var inGame: Boolean = false;
-		private var myMenu: Menu;
-		private var myDeployment: Deployment;
-		private var myBattle: Battle;
-		private var myField: Field;
+		
+		private var myMenu = new Menu();
+		private var myDeployment = new Deployment();
+		private var myBattle = new Battle();
+		private var myField = new Field();
+		private var myDifficulty = new Difficulty()
 
 		private var gameField: Array;
 
 		public function Main(): void {
-			myMenu = new Menu();
-			myDeployment = new Deployment();
-			myBattle = new Battle();
-			myField = new Field();
+			
+			
+			
+			
 
 			addChild(myMenu);
 
@@ -42,7 +44,7 @@
 				var deployment: Deployment = event.currentTarget.parent as Deployment;
 				if (deployment && deployment.parent) {
 					deployment.parent.removeChild(deployment);
-					addChild(myBattle); // Add the Game instance to the stage
+					addChild(myDifficulty); // Add the Game instance to the stage
 					//myBattle.addChild(myDeployment.field);
 					//myBattle.addChild(myDeployment.boat1);
 					//myBattle.addChild(myDeployment.boat2);
