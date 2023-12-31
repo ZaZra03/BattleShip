@@ -9,6 +9,16 @@
 		public function EasyButtonH() {
 			// constructor code
 			this.addEventListener(MouseEvent.ROLL_OUT, onRollOut);
+			this.addEventListener(MouseEvent.CLICK, onClick);
+
+		}
+
+		private function onRollOut(event: MouseEvent): void {
+			var button = new EasyButton();
+			button.x = event.currentTarget.x;
+			button.y = event.currentTarget.y;
+			parent.addChild(button);
+			parent.removeChild(this);
 		}
 
 		private function onRollOut(event: MouseEvent): void {

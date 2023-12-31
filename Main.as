@@ -16,11 +16,6 @@
 		private var gameField: Array;
 
 		public function Main(): void {
-			
-			
-			
-			
-
 			addChild(myMenu);
 
 			// Add event listener to the Menu class
