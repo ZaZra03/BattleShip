@@ -10,9 +10,10 @@
 		private var myDeployment = new Deployment();
 		private var myBattle = new Battle();
 		private var myField = new Field();
-		private var myDifficulty = new Difficulty()
+		private var myDifficulty = new Difficulty();
+		private var myDrawing = new Drawing();
 
-			private var gameField: Array;
+		private var gameField: Array;
 
 		public function Main(): void {
 			addChild(myMenu);
@@ -32,8 +33,17 @@
 				var menu: Menu = event.currentTarget.parent as Menu;
 				if (menu && menu.parent) {
 					menu.parent.removeChild(menu);
-					addChild(myDeployment); // Add the Game instance to the stage
+					addChild(myDrawing); // Add the Game instance to the stage
 					myMenu.menuPlay.removeEventListener(MouseEvent.CLICK, onPlayClick); // Remove the event listener
+				}
+
+			} else if (event.currentTarget.parent && event.currentTarget.parent is Drawing) {
+				var drawing: Drawing = event.currentTarget.parent as Drawing;
+				if (drawing && drawing.parent) {
+					drawing.parent.removeChild(menu);
+					addChild(myDeployment); // Add the Game instance to the stage
+
+
 				}
 			} else if (event.currentTarget.parent && event.currentTarget.parent is Deployment) {
 				var deployment: Deployment = event.currentTarget.parent as Deployment;

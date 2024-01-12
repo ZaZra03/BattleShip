@@ -27,29 +27,29 @@
 
 		private function addBoats(): void {
 			// Boat 1
-			this.boat1.buttonMode = true;
-			this.boat1.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
-			this.boat1.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
+			//this.boat1.buttonMode = true;
+			//this.boat1.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
+			//this.boat1.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
 
 			// Boat 2
-			this.boat2.buttonMode = true;
-			this.boat2.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
-			this.boat2.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
+			//this.boat2.buttonMode = true;
+			//this.boat2.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
+			//this.boat2.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
 
 			// Boat 3
-			this.boat3.buttonMode = true;
-			this.boat3.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
-			this.boat3.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
+			//this.boat3.buttonMode = true;
+			//this.boat3.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
+			//this.boat3.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
 
 			// Boat 4
-			this.boat4.buttonMode = true;
-			this.boat4.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
-			this.boat4.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
+			//this.boat4.buttonMode = true;
+			//this.boat4.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
+			//this.boat4.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
 
 			// Boat 5
-			this.boat5.buttonMode = true;
-			this.boat5.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
-			this.boat5.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
+			//this.boat5.buttonMode = true;
+			//this.boat5.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
+			//this.boat5.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
 		}
 
 

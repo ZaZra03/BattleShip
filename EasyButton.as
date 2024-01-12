@@ -1,23 +1,43 @@
 ﻿package {
+    import flash.display.MovieClip;
+    import flash.events.MouseEvent;
 
-	import flash.display.SimpleButton;
-	import flash.events.MouseEvent;
+    public class EasyButton extends MovieClip {
+        private var isClicked:Boolean = false;
 
-	public class EasyButton extends SimpleButton {
+        public function EasyButton() {
+            // constructor code
+            stop(); // Use stop() instead of gotoAndStop(1) to avoid issues
 
+            this.addEventListener(MouseEvent.ROLL_OVER, onRollOver);
+            this.addEventListener(MouseEvent.ROLL_OUT, onRollOut);
+            this.addEventListener(MouseEvent.CLICK, onClick);
+        }
 
-		public function EasyButton() {
-			// constructor code
-			this.addEventListener(MouseEvent.ROLL_OVER, onRollOver);
+        private function onRollOver(event:MouseEvent):void {
+            if (!isClicked) {
+				this.buttonMode = true;
+                gotoAndStop(2);
+            }
+        }
 
-		}
+        private function onRollOut(event:MouseEvent):void {
+            if (!isClicked) {
+				this.buttonMode = true;
+                gotoAndStop(1);
+            }
+        }
 
-		private function onRollOver(event: MouseEvent): void {
-			var button = new EasyButtonH();
-			button.x = event.currentTarget.x;
-			button.y = event.currentTarget.y;
-			parent.addChild(button);
-			parent.removeChild(this);
-		}
-	}
+        private function onClick(event:MouseEvent):void {
+            if (isClicked) {
+                gotoAndStop(1);
+                this.addEventListener(MouseEvent.ROLL_OVER, onRollOver);
+            } else {
+                gotoAndStop(2);
+                this.removeEventListener(MouseEvent.ROLL_OVER, onRollOver);
+            }
+
+            isClicked = !isClicked; // Toggle the state
+        }
+    }
 }

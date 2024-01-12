@@ -2,10 +2,10 @@
     import flash.display.MovieClip;
     import flash.events.MouseEvent;
 
-    public class SymbolButton extends MovieClip {
+    public class Tile2 extends MovieClip {
         private var isClicked:Boolean = false;
 
-        public function SymbolButton() {
+        public function Tile2() {
             // constructor code
             stop(); // Use stop() instead of gotoAndStop(1) to avoid issues
 
