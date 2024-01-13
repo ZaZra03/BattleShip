@@ -15,13 +15,13 @@
 
         private function onRollOver(event:MouseEvent):void {
             if (!isClicked) {
-                gotoAndStop(2);
+
             }
         }
 
         private function onRollOut(event:MouseEvent):void {
             if (!isClicked) {
-                gotoAndStop(1);
+
             }
         }
 	}

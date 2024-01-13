@@ -1,11 +1,30 @@
 ﻿package {
 	import flash.display.MovieClip;
+	import flash.display.Sprite;
+	import flash.events.MouseEvent;
+
 
 	public class Boat4 extends MovieClip implements Boat {
-		private var _boatNumber: int = 4;
-		private var _boatSize: int = 2;
-		private var _attackDamage: int;
+		public var _boatNumber: int = 4;
+		public var _boatSize: int = 2;
+		public var _attackDamage: int;
 		private var _isPlace: Boolean;
+		private var isDrawing: Boolean;
+		private var drawingContainer: Sprite; // Changed to Sprite for flexibility
+		private var drawingLines: Sprite; // Separate sprite for drawn lines
+
+		public function Boat4() {
+			// constructor code
+			this.addEventListener(MouseEvent.MOUSE_DOWN, startDrawing);
+			this.addEventListener(MouseEvent.MOUSE_MOVE, draw);
+			this.addEventListener(MouseEvent.MOUSE_UP, stopDrawing);
+
+			drawingContainer = new Sprite();
+			addChild(drawingContainer); // Add the drawing container to the display list
+
+			drawingLines = new Sprite();
+			addChild(drawingLines); // Add the drawing lines container to the display list
+		}
 
 		public function get boatNumber(): int {
 			return _boatNumber;
@@ -27,6 +46,26 @@
 			_isPlace = value;
 		}
 
-		// Other methods or properties specific to Boat1
+		private function startDrawing(event: MouseEvent): void {
+			isDrawing = true;
+			drawingContainer.graphics.lineStyle(2, 0x000000); // Set line color and thickness
+			drawingContainer.graphics.moveTo(drawingContainer.mouseX, drawingContainer.mouseY);
+		}
+
+		private function draw(event: MouseEvent): void {
+			if (isDrawing) {
+				drawingContainer.graphics.lineTo(drawingContainer.mouseX, drawingContainer.mouseY);
+			}
+		}
+
+		private function stopDrawing(event: MouseEvent): void {
+			isDrawing = false;
+		}
+
+		public function disableDrawing(): void {
+			this.removeEventListener(MouseEvent.MOUSE_DOWN, startDrawing);
+			this.removeEventListener(MouseEvent.MOUSE_MOVE, draw);
+			this.removeEventListener(MouseEvent.MOUSE_UP, stopDrawing);
+		}
 	}
 }

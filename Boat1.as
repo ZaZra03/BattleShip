@@ -2,7 +2,7 @@
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
-	import flash.geom.Point;
+
 
 	public class Boat1 extends MovieClip implements Boat {
 		public var _boatNumber: int = 1;
