@@ -48,6 +48,8 @@
 					myDrawing.drawing1.buttonMode = true;
 					myDrawing.drawing1.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
 					myDrawing.drawing1.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
+					myDrawing.drawing1.width = 93;
+					myDrawing.drawing1.height = 107;
 					myDrawing.drawing1.x = 47.65;
 					myDrawing.drawing1.y = 137.95;
 
@@ -56,6 +58,8 @@
 					myDrawing.drawing2.buttonMode = true;
 					myDrawing.drawing2.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
 					myDrawing.drawing2.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
+					myDrawing.drawing2.width = 93;
+					myDrawing.drawing2.height = 107;
 					myDrawing.drawing2.x = 47.65;
 					myDrawing.drawing2.y = 244.95;
 
@@ -64,6 +68,8 @@
 					myDrawing.drawing3.buttonMode = true;
 					myDrawing.drawing3.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
 					myDrawing.drawing3.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
+					myDrawing.drawing3.width = 186;
+					myDrawing.drawing3.height = 107;
 					myDrawing.drawing3.x = 47.65;
 					myDrawing.drawing3.y = 351.95;
 
@@ -72,6 +78,8 @@
 					myDrawing.drawing4.buttonMode = true;
 					myDrawing.drawing4.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
 					myDrawing.drawing4.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
+					myDrawing.drawing4.width = 186;
+					myDrawing.drawing4.height = 107;
 					myDrawing.drawing4.x = 47.65;
 					myDrawing.drawing4.y = 458.95;
 
@@ -80,6 +88,8 @@
 					myDrawing.drawing5.buttonMode = true;
 					myDrawing.drawing5.addEventListener(MouseEvent.MOUSE_DOWN, onBoatClicked);
 					myDrawing.drawing5.addEventListener(MouseEvent.MOUSE_UP, onBoatClicked);
+					myDrawing.drawing5.width = 279;
+					myDrawing.drawing5.height = 107;
 					myDrawing.drawing5.x = 47.65;
 					myDrawing.drawing5.y = 565.95;
 
