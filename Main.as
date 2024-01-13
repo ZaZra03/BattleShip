@@ -3,12 +3,13 @@
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
 	import flash.events.Event;
+	
 
 	public class Main extends Sprite {
 
 		private var myMenu = new Menu();
 		private var myDeployment = new Deployment();
-		private var myBattle = new Battle();
+		private var myBattle = new Battle(myDeployment.gameField);
 		private var myField = new Field();
 		private var myDifficulty = new Difficulty();
 		private var myDrawing = new Drawing();
@@ -51,7 +52,7 @@
 					myDrawing.drawing1.width = 93;
 					myDrawing.drawing1.height = 107;
 					myDrawing.drawing1.x = 47.65;
-					myDrawing.drawing1.y = 137.95;
+					myDrawing.drawing1.y = 134.7;
 
 					myDeployment.addChild(myDrawing.drawing2);
 					myDrawing.drawing2.disableDrawing();
@@ -61,7 +62,7 @@
 					myDrawing.drawing2.width = 93;
 					myDrawing.drawing2.height = 107;
 					myDrawing.drawing2.x = 47.65;
-					myDrawing.drawing2.y = 244.95;
+					myDrawing.drawing2.y = 241.7;
 
 					myDeployment.addChild(myDrawing.drawing3);
 					myDrawing.drawing3.disableDrawing();
@@ -71,7 +72,7 @@
 					myDrawing.drawing3.width = 186;
 					myDrawing.drawing3.height = 107;
 					myDrawing.drawing3.x = 47.65;
-					myDrawing.drawing3.y = 351.95;
+					myDrawing.drawing3.y = 348.7;
 
 					myDeployment.addChild(myDrawing.drawing4);
 					myDrawing.drawing4.disableDrawing();
@@ -81,7 +82,7 @@
 					myDrawing.drawing4.width = 186;
 					myDrawing.drawing4.height = 107;
 					myDrawing.drawing4.x = 47.65;
-					myDrawing.drawing4.y = 458.95;
+					myDrawing.drawing4.y = 455.7;
 
 					myDeployment.addChild(myDrawing.drawing5);
 					myDrawing.drawing5.disableDrawing();
@@ -91,7 +92,7 @@
 					myDrawing.drawing5.width = 279;
 					myDrawing.drawing5.height = 107;
 					myDrawing.drawing5.x = 47.65;
-					myDrawing.drawing5.y = 565.95;
+					myDrawing.drawing5.y = 562.7;
 
 
 					//myDrawing.drawing1.height = 500;
@@ -157,6 +158,7 @@
 					myBattle.addChild(myDrawing.drawing5);
 					myDrawing.drawing5.x = myDrawing.drawing5.x - 376.5;
 					myDrawing.drawing5.y = myDrawing.drawing5.y - 43.8;
+					myBattle.start = true;
 					addChild(myBattle); // Add the Game instance to the stage
 					//myBattle.addChild(myDeployment.field);
 					//myBattle.addChild(myDeployment.boat1);
