@@ -1,29 +1,24 @@
-﻿package  {
-	
+﻿package {
+
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
-	
+
 	public class Tile1 extends MovieClip {
-		private var isClicked:Boolean = false;
-		
-        public function Tile1() {
-            // constructor code
-            stop(); // Use stop() instead of gotoAndStop(1) to avoid issues
-            this.addEventListener(MouseEvent.ROLL_OVER, onRollOver);
-            this.addEventListener(MouseEvent.ROLL_OUT, onRollOut);
-        }
+		private var _isSelected: Boolean;
 
-        private function onRollOver(event:MouseEvent):void {
-            if (!isClicked) {
+		public function Tile1() {
+			// constructor code
+			stop();
+			_isSelected = false;
+		}
 
-            }
-        }
+		public function set isSelected(value: Boolean): void {
+			_isSelected = value;
+		}
 
-        private function onRollOut(event:MouseEvent):void {
-            if (!isClicked) {
-
-            }
-        }
+		public function get isSelected(): Boolean {
+			return _isSelected;
+		}
 	}
-	
+
 }
