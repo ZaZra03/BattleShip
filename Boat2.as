@@ -1,6 +1,5 @@
 ﻿package {
 	import flash.display.MovieClip;
-	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 
 
@@ -10,20 +9,12 @@
 		public var _attackDamage: int;
 		private var _isPlace: Boolean;
 		private var isDrawing: Boolean;
-		private var drawingContainer: Sprite; // Changed to Sprite for flexibility
-		private var drawingLines: Sprite; // Separate sprite for drawn lines
 
 		public function Boat2() {
 			// constructor code
 			this.addEventListener(MouseEvent.MOUSE_DOWN, startDrawing);
 			this.addEventListener(MouseEvent.MOUSE_MOVE, draw);
 			this.addEventListener(MouseEvent.MOUSE_UP, stopDrawing);
-
-			drawingContainer = new Sprite();
-			addChild(drawingContainer); // Add the drawing container to the display list
-
-			drawingLines = new Sprite();
-			addChild(drawingLines); // Add the drawing lines container to the display list
 		}
 
 		public function get boatNumber(): int {
@@ -48,13 +39,13 @@
 
 		private function startDrawing(event: MouseEvent): void {
 			isDrawing = true;
-			drawingContainer.graphics.lineStyle(2, 0x000000); // Set line color and thickness
-			drawingContainer.graphics.moveTo(drawingContainer.mouseX, drawingContainer.mouseY);
+			this.graphics.lineStyle(2, 0x000000); // Set line color and thickness
+			this.graphics.moveTo(this.mouseX, this.mouseY);
 		}
 
 		private function draw(event: MouseEvent): void {
 			if (isDrawing) {
-				drawingContainer.graphics.lineTo(drawingContainer.mouseX, drawingContainer.mouseY);
+				this.graphics.lineTo(this.mouseX, this.mouseY);
 			}
 		}
 
@@ -66,6 +57,10 @@
 			this.removeEventListener(MouseEvent.MOUSE_DOWN, startDrawing);
 			this.removeEventListener(MouseEvent.MOUSE_MOVE, draw);
 			this.removeEventListener(MouseEvent.MOUSE_UP, stopDrawing);
+		}
+
+		public function clearDrawing(): void {
+			this.graphics.clear(); // Clear the drawing lines
 		}
 	}
 }
