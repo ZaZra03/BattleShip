@@ -3,7 +3,7 @@
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
 	import flash.events.Event;
-	
+
 
 	public class Main extends Sprite {
 
@@ -158,7 +158,7 @@
 					myBattle.addChild(myDrawing.drawing5);
 					myDrawing.drawing5.x = myDrawing.drawing5.x - 376.5;
 					myDrawing.drawing5.y = myDrawing.drawing5.y - 43.8;
-					myBattle.start = true;
+
 					addChild(myBattle); // Add the Game instance to the stage
 					//myBattle.addChild(myDeployment.field);
 					//myBattle.addChild(myDeployment.boat1);
