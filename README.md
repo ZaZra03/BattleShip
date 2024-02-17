@@ -2,6 +2,10 @@
 
 This is a rendition of the classic paper and pencil game, Battleship, with a unique twist: players get to draw their own fleets. This creative element adds an engaging layer, especially for people who enjoy drawing, making the game even more appealing.
 
+## Code Status
+
+**Note:** The code for this project is not yet finished.
+
 ## Screenshots
 
 ![428111210_1101970914138025_4155030190412696245_n](https://github.com/ZaZra03/BattleShip/assets/66657798/572eb0a8-c869-4191-95a5-6f01ccb1d227)
